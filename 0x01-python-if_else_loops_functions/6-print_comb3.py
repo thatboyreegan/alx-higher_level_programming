@@ -6,4 +6,4 @@ for i in range(0, 9):
         if i == 8:
             print("{:02d}".format(j))
         else:
-            print("{:02d}, ".format(j), end=" ")
+            print("{:02d}, ".format(j), end="")
