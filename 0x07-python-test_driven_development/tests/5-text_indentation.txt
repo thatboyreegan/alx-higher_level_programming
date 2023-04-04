@@ -1,0 +1,51 @@
+# 5-text_indentation
+
+Usage:
+----------------
+
+Import the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test with valid string:
+
+    >>> my_str = "what happens when you open your eyes?\
+    ... you get to see the light out \
+    ... of NoWhere.\
+    ... what makes that possible? \
+    ... lets find that out: Tonight! "
+
+    >>> text_indentation(my_str)
+    what happens when you open your eyes?
+    $
+    you get to see the light out of NoWhere.
+    $
+    what makes that possible?
+    $
+    lets find that out:
+    $
+    Tonight!
+    $
+
+    >>> my_str1 = """Give yourself up.  \
+    ... We want to help you out in the best way we can \
+    ... and all we need is your cooparation:Guess what?\
+    ... you are doomed: so strap in"""
+    
+    >>> text_indentation(my_str1)
+    Give yourself up.
+    $
+    We want to help you out in the best way we can and all we need is your cooparation:
+    $
+    Guess what?
+    $
+    you are doomed:
+    $
+    so strap in
+
+Test with non-string text:
+
+    >>> text_indentation(4567)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string

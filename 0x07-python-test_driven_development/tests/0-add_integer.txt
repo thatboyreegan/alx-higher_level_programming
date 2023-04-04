@@ -1,0 +1,42 @@
+# 0-add_integer.txt
+
+Usage
+-------------------
+
+Import ``add_integer`` from the ``0-add_integer`` module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test for one value given:
+    >>> add_integer(5)
+    103
+Test for both values given as integers:
+    >>> add_integer(67, 43)
+    100
+
+Test for negative values:
+    >>> add_integer(45, -5)
+    40
+
+    >>> add_integer(-65.7, -60)
+    -125
+
+Test for a value for 'a' that is not an integer:
+    >>> add_integer("word")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test for float values:
+    >>> add_integer(43.20, 50.13)
+    93
+
+Test for both values given but one is not integer/float:
+    >>> add_integer("word", 50)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(1, [1, 2, 3, 4, 5, 6, 7])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer

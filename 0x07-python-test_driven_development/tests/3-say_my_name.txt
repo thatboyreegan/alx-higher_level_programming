@@ -1,0 +1,39 @@
+# 3-say_my_name
+
+Usage
+--------------------
+
+Import ``say_my_name``:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test with valid values:
+
+    >>> # One name
+    >>> say_my_name("Ronald")
+    My name is Ronald 
+
+    >>> # Both names
+    >>> say_my_name("Reagan", "Odhiambo")
+    My name is Brian Kimathi
+
+    >>> names = ["Reagan", "Odhiambo"]
+    >>> say_my_name(names[0],names[1])
+    My name is Reagan Odhiambo
+
+Test with invalid name types:
+
+    >>> say_my_name(6)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Reagan", 7)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name([4], "Ronald")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
