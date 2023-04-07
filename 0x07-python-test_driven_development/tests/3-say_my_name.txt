@@ -15,7 +15,7 @@ Test with valid values:
 
     >>> # Both names
     >>> say_my_name("Reagan", "Odhiambo")
-    My name is Brian Kimathi
+    My name is Reagan Odhiambo
 
     >>> names = ["Reagan", "Odhiambo"]
     >>> say_my_name(names[0],names[1])

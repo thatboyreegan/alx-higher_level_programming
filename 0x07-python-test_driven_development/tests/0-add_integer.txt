@@ -3,15 +3,16 @@
 Usage
 -------------------
 
-Import ``add_integer`` from the ``0-add_integer`` module:
-    >>> add_integer = __import__('0-add_integer').add_integer
+#Import ``add_integer`` from the ``0-add_integer`` module:
+   >>> add_integer = __import__('0-add_integer').add_integer
 
 Test for one value given:
     >>> add_integer(5)
     103
+
 Test for both values given as integers:
     >>> add_integer(67, 43)
-    100
+    110
 
 Test for negative values:
     >>> add_integer(45, -5)
@@ -22,6 +23,10 @@ Test for negative values:
 
 Test for a value for 'a' that is not an integer:
     >>> add_integer("word")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    >>> add_integer("really")
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
@@ -37,6 +42,28 @@ Test for both values given but one is not integer/float:
     TypeError: a must be an integer
 
     >>> add_integer(1, [1, 2, 3, 4, 5, 6, 7])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test for float overlfow;
+    >>> add_integer(2.7976931348623157e+308,6)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Test for no arguments;
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test for None;
+    >>> add_integer(None,6)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    >>> add_integer(7,None)
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
