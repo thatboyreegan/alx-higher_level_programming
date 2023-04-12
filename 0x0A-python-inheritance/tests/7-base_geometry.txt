@@ -1,0 +1,59 @@
+Test file for 7-base_geometry.py
+===================================
+
+Usage:
+==========
+
+Importing the class:
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> base_g = BaseGeometry()
+
+Test area method:
+
+	>>> base_g.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+	>>> base_g.area(6)
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+	>>> base_g.area(4,5)
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.area() takes 1 positional argument but 3 were given
+
+Test integer_validator:
+
+
+    >>> base_g.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	
+
+    >>> base_g.integer_validator("two")
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+	>>> base_g.integer_validator("one", "reagan")
+	Traceback (most recent call last):
+		...
+	TypeError: one must be an integer
+    
+    >>> base_g.integer_validator("one", 5)
+
+	>>> base_g.integer_validator("one", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: one must be greater than 0
+
+	>>> base_g.integer_validator("one", -6)
+	Traceback (most recent call last):
+        ...
+    ValueError: one must be greater than 0
