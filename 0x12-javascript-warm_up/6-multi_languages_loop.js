@@ -5,7 +5,7 @@ import('node:process');
 const langauages = [
   'C is fun',
   'Python is cool',
-  'Javascript is aamazing'
+  'JavaScript is amazing'
 ];
 
 let i = 0;
