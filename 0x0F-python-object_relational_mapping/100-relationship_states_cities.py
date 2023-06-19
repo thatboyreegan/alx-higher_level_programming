@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This script prints all the City objects from the database"""
+"""This script creates the state
+california with the city san francisco form the database"""
 from sys import argv
 from model_state import Base, State
 from model_state import City
@@ -17,10 +18,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(City, State).join(State)
+    state = State(name='California')
+    s_city = City(name='San Francisco')
 
-    for _c, _s in query.all():
-        print("{}: ({:d}) {}".format(_s.name, _c.id, _c.name))
+    state.cities.append(s_city)
+
+    session.add(state)
 
     session.commit()
     session.close()
